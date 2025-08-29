@@ -1,0 +1,15 @@
+# Household Watch ignores
+
+# Node
+node_modules/
+.env
+dist/
+build/
+
+# Logs
+*.log
+
+# System
+.DS_Store
+Thumbs.db
+

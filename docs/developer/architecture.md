@@ -77,6 +77,45 @@ src/
 - **Health Checks**: Automated system health monitoring
 - **Error Tracking**: Comprehensive error reporting
 
+-  [ ZMPT101B ]       [ ACS712 ]
+ (Voltage Sensor)   (Current Sensor)
+        │                 │
+        └──────► [ Arduino / ESP8266 ] ◄──────────────┐
+                        │                             │
+                        ▼                             │ Wi-Fi (HTTP POST JSON)
+              Sends JSON payload                      │
+         { voltage, current, power, user_id }         │
+                        │                             │
+                        ▼                             │
+               ┌───────────────────────┐              │
+               │     Backend API       │  (Node.js + Express)
+               │  http://localhost:4000│
+               └───────────────────────┘
+                        │
+                        ▼
+     ┌─────────────────────────────┐
+     │         Database            │
+     │       (MySQL / Firebase)    │
+     │ Tables: users, readings,    │
+     │ preferences, consent_logs   │
+     └─────────────────────────────┘
+                        │
+                        ▼
+      ┌───────────────────────────────┐
+      │        Frontend Dashboard     │  (React.js)
+      │   - Real-time Charts          │
+      │   - Privacy Controls          │
+      │   - User Auth (Login/Signup)  │
+      │   - Historical Analysis       │
+      └───────────────────────────────┘
+                        │
+                        ▼
+      ┌───────────────────────────────┐
+      │       Mobile App (Optional)   │
+      │  - Same APIs as frontend      │
+      └───────────────────────────────┘
+
+
 ## Deployment Architecture
 Internet → Load Balancer → Application Servers → Database Cluster
 │

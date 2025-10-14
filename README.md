@@ -662,7 +662,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 - **Documentation**: [docs.household-watch.dev](https://docs.household-watch.dev)
-- **Email**: support@household-watch.dev
+- **Email**: vankanikhil@gmail.com
 - **Issues**: GitHub Issues for bug reports and feature requests
 
 ---
